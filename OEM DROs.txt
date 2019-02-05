@@ -1,0 +1,523 @@
+This list gives the codes to be used in calls of SetOEMDRO and GetOEMDRO to access all DROs.
+
+If you are using a version of Mach3 prior to 1.90 then to access data in this list that are in the range 800 upwards you will need to refer to the deprecated calls (e.g. SetDRO) and corresponding codes.
+
+
+command:
+
+SetOEMDRO
+
+GetOEMDRO
+
+{|border="1" cellpadding = "1"
+!width="400"|Function
+!width="50"|OEMCode
+|-
+|Jog Inc Inc DRO||1
+|-
+|Pulse Freq DRO||2
+|-
+|Slow Jog % DRO||3
+|-
+|X min DRO||4
+|-
+|Y min DRO||5
+|-
+|Z min DRO||6
+|-
+|A min DRO||7
+|-
+|B min DRO||8
+|-
+|C min DRO||9
+|-
+|X max DRO||10
+|-
+|Y max DRO||11
+|-
+|Z max DRO||12
+|-
+|A max DRO||13
+|-
+|B max DRO||14
+|-
+|C max DRO||15
+|-
+|X G92 Axis Off DRO||16
+|-
+|Y G92 Axis Off DRO||17
+|-
+|Z G92 Axis Off DRO||18
+|-
+|A G92 Axis Off DRO||19
+|-
+|B G92 Axis Off DRO||20
+|-
+|C G92 Axis Off DRO||21
+|-
+|Queue Depth DRO||22
+|-
+|Time Scale DRO||23
+|-
+|PWM Base DRO||24
+|-
+|Torch Correction Speed DRO||25
+|-
+|Torch Height Corrorrection DRO||26
+|-
+|Torch Height Max DRO||27
+|-
+|CPU Load DRO||28
+|-
+|Encoder 1 (X) position DRO||29
+|-
+|Encoder 2 (Y) position DRO||30
+|-
+|Encoder 3 (Z) position DRO||31
+|-
+|Tool length offset||32
+|-
+|X axis Ref Sw DRO||33
+|-
+|Y axis Ref Sw DRO||34
+|-
+|Z axis Ref Sw DRO||35
+|-
+|A axis Ref Sw DRO||36
+|-
+|B axis Ref Sw DRO||37
+|-
+|C axis Ref Sw DRO||38
+|-
+|True spindle DRO||39
+|-
+|Worst Case DRO||40
+|-
+|Tool X Offset DRO||41
+|-
+|Tool Z Offset DRO||42
+|-
+|Tool Dia DRO||43
+|-
+|Tool Tip Rad DRO||44
+|-
+|Touch Correction DRO||45
+|-
+|Current Fixture Number DRO||46
+|-
+|Part X Offset DRO||47
+|-
+|Part Y Offset DRO||48
+|-
+|Part Z Offset DRO||49
+|-
+|Part A Offset DRO||50
+|-
+|Part B Offset DRO||51
+|-
+|Part C Offset DRO||52
+|-
+|CPU Speed DRO||53
+|-
+|Safe Z DRO||54
+|-
+|Overidden Feed Rate DRO (read only?)||55 
+|-
+|Pulley DRO||56
+|-
+|Max Spindle Speed  on current pulley DRO||57
+|-
+|Velocity per Rev DRO||58
+|-
+|X Scale DRO||59
+|-
+|Y Scale DRO||60
+|-
+|Z Scale DRO||61
+|-
+|A Scale DRO||62
+|-
+|B Scale DRO||63
+|-
+|C Scale DRO||64
+|-
+|Lowest Torch Correction DRO||65
+|-
+|Threading Entrance Angle DRO||66
+|-
+|Max Entrance Points DRO||67
+|-
+|Rotational Time Error DRO||68
+|-
+|Entrance Trigger DRO||69
+|-
+|Time Correction Derivative DRO||70
+|-
+|Interrupts per spindle rev DRO||71
+|-
+|Current Spin Counts DRO||72
+|-
+|Spin Adder DRO||73
+|-
+|Spindle Speed Override DRO||74
+|-
+|Stock Size DRO||75
+|-
+|Laser X Grid DRO||76
+|-
+|Laser Y Grid DRO||77
+|-
+|Repetitions DRO||78
+|-
+|Lower Z-Inhibit By DRO||79
+|-
+|Z-Inhibit DRO||80
+|-
+|Port Bit-test DRO (diagnostic)||81
+|-
+|Anti-dive limit DRO||82
+|-
+|X Machine Coord DRO||83
+|-
+|Y Machine Coord DRO||84
+|-
+|Z Machine Coord DRO||85
+|-
+|A Machine Coord DRO||86
+|-
+|B Machine Coord DRO||87
+|-
+|C Machine Coord DRO||88
+|-
+|Blend factor DRO||89
+|-
+|Number of spindle disc slots DRO||90
+|-
+|G73 Pull-off value DRO||91
+|-
+|Tangential lift threshold angle DRO||92
+|-
+|Tangential lift Z level DRO||93
+|-
+|reserved||94
+|-
+|reserved||95
+|-
+|reserved||96
+|-
+|CV Feedrate DRO||97
+|-
+|Feed override increment value DRO||98
+|-
+|??? Spindle ratio DRO||99
+|-
+|Encoder 4 position DRO||100
+|-
+|MPG 1 count DRO||101
+|-
+|MPG 2 count DRO||102
+|-
+|MPG 3 count DRO||103
+|-
+|Rapid feedrate DRO||104
+|-
+|Diameter of current tool DRO||105
+|-
+|Tip direction of current tool DRO||106
+|-
+|Tool nose radius of current tool DRO||107
+|-
+|X offset of current tool DRO||108
+|-
+|Z offset of current tool DRO||109
+|-
+|X wear offset of current tool DRO||110
+|-
+|Z wear offset of current tool DRO||111
+|-
+|Tool turret angle of current tool DRO||112
+|-
+|Velocity of MPG 1 DRO||113
+|-
+|Velocity of MPG 2 DRO||114
+|-
+|Velocity of MPG 3 DRO||115
+|-
+|Angle of taper to be cut with MPG tapering DRO||116
+|-
+|Spindle speed as surface speed DRO||117
+|-
+|Angle of rotation of X/Y coordinate system (cf G68)||118
+|-
+|Laser grid spacing DRO||119
+|-
+|Number of incremental jogs that can be buffered  DRO||120
+|-
+|Minimum spindle speed on current pulley DRO||121
+|-
+|Feed rate ignoring that set in F word DRO||122
+|-
+|Tool post offset (between front and rear posts DRO||123
+|-
+|Current velocity of MPG 1 DRO||124
+|-
+|Current velocity of MPG 2 DRO||125
+|-
+|Feedrate for use with MPG step jogs DRO||126
+|-
+|Error between Encoder 1 and abs X position DRO||127
+|-
+|Error between Encoder 2 and abs Y position DRO||128
+|-
+|Error between Encoder 3 and abs Z position DRO||129
+|-
+|Time (uSec) in interrupt handler DRO||130
+|-
+|SLS Dist - laser position measurement DRO||131
+|-
+|Axis 6 Tripcount - system debug use only DRO||132
+|-
+|??? Engine lookahead DRO||133
+|-
+|Count of actual pulses output on X - debug use only DRO||134
+|-
+|Count of actual pulses output on Y - debug use only DRO||135
+|-
+|Count of actual pulses output on Z - debug use only DRO||136
+|-
+|Count of actual pulses output on A - debug use only DRO||137
+|-
+|Count of actual pulses output on B - debug use only DRO||138
+|-
+|Count of actual pulses output on C - debug use only DRO||139
+|-
+|Actual count from encoder 1 - debug use only DRO||140
+|-
+|Actual count from encoder 2 - debug use only DRO||141
+|-
+|Actual count from encoder 3 - debug use only DRO||142
+|-
+|Actual count from encoder 4 - debug use only DRO||143
+|-
+|Actual count from encoder 5 - debug use only DRO||144
+|-
+|Actual count from encoder 6 - debug use only DRO||145
+|-
+|ModBus input 64 DRO||146
+|-
+|ModBus input 65 DRO||147
+|-
+|ModBus input 66 DRO||148
+|-
+|ModBus input 67 DRO||149
+|-
+|Softlimit X Maximum DRO||150
+|-
+|Softlimit Y Maximum DRO||151
+|-
+|Softlimit Z Maximum DRO||152
+|-
+|Softlimit A Maximum DRO||153
+|-
+|Softlimit B Maximum DRO||154
+|-
+|Softlimit C Maximum DRO||155
+|-
+|Softlimit X Minimum DRO||156
+|-
+|Softlimit Y Minimum DRO||157
+|-
+|Softlimit Z Minimum DRO||158
+|-
+|Softlimit A Minimum DRO||159
+|-
+|Softlimit B Minimum DRO||160
+|-
+|Softlimit C Minimum DRO||161
+|-
+|Distance from front to rear toolpost DRO ||162
+|-
+|Encoder 1 position (in units) DRO ||170
+|-
+|Encoder 2 position (in units) DRO ||171
+|-
+|Encoder 3 position (in units) DRO ||172
+|-
+|Encoder 4 position (in units) DRO ||173
+|-
+|Part X radius/diameter for Touching to tooltable DRO ||175
+|-
+|Part Z location for Touching to tooltable DRO ||176
+|-
+|reserved DRO ||177
+|-
+|Machine X coord - X Work Offset DRO ||178
+|-
+|Machine Y coord - Y Work Offset DRO ||179
+|-
+|Machine Z coord - Z Work Offset - Tool length DRO ||180
+|-
+|Machine A coord - A Work Offset DRO ||181
+|-
+|Machine B coord - B Work Offset DRO ||182
+|-
+|Machine C coord - C Work Offset DRO ||183
+|-
+|X Cont. Pnt. coord (Machine - Work - G52/G92) DRO ||184
+|-
+|Y Cont. Pnt. coord (Machine - Work - G52/G92) DRO ||185
+|-
+|Z Cont. Pnt. coord (Machine - Work - Tool len. - G52/G92) DRO ||186
+|-
+|A Cont. Pnt. coord (Machine - Work - G52/G92) DRO ||187
+|-
+|B Cont. Pnt. coord (Machine - Work - G52/G92) DRO ||188
+|-
+|C Cont. Pnt. coord (Machine - Work - G52/G92) DRO ||189
+|-
+|X axis home location used by G28 DRO ||190
+|-
+|Y axis home location used by G28 DRO ||191
+|-
+|Z axis home location used by G28 DRO ||192
+|-
+|A axis home location used by G28 DRO ||193
+|-
+|B axis home location used by G28 DRO ||194
+|-
+|C axis home location used by G28 DRO ||195
+|-
+|X axis Distance to Go DRO ||196
+|-
+|Y axis Distance to Go DRO ||197
+|-
+|Z axis Distance to Go DRO ||198
+|-
+|A axis Distance to Go DRO ||199
+|-
+|B axis Distance to Go DRO ||200
+|-
+|C axis Distance to Go DRO ||201
+|-
+|Overriden spindle speed DRO ||202
+|-
+|Current pulley reversed direction||203
+|-
+|Current X offset of Turn tool||204
+|-
+|reserved||205
+|-
+|reserved||206
+|-
+|reserved||207
+|-
+|Encoder X reading corrected by offsets ||208
+|-
+|Encoder Y reading corrected by offsets ||209
+|-
+|Encoder Z reading corrected by offsets ||210
+|-
+|X soft limits Max  ||211
+|-
+|y soft limits Max  ||212
+|-
+|Z soft limits Max  ||213
+|-
+|X soft limits Min  ||214
+|-
+|y soft limits Min  ||215
+|-
+|Z soft limits Min  ||216
+|-
+|Spindle Seconds CW ||217
+|-
+|reserved||218
+|-
+|reserved||219
+|-
+|Brains exe time (ms) ||220
+|-
+|Probe Radius ||221
+|-
+|Sub Program depth  ||222
+|-
+|Rapid Override  ||223
+|-
+|Number of macros currently running  ||224
+|-
+|X DRO||800
+|-
+|Y DRO||801
+|-
+|Z DRO||802
+|-
+|A DRO||803
+|-
+|B DRO||804
+|-
+|C DRO||805
+|-
+|X Vel DRO||806
+|-
+|Y Vel DRO||807
+|-
+|Z  Vel DRO||808
+|-
+|A Vel DRO||809
+|-
+|B Vel DRO||810
+|-
+|C Vel DRO||811
+|-
+|Blended Velocity DRO||813
+|-
+|Elapsed DRO||814
+|-
+|Estimate DRO||815
+|-
+|Curr Line no DRO||816
+|-
+|Spindle requested DRO||817
+|-
+|Feedrate DRO||818
+|-
+|Motion Mode (G0, G1, G2 etc) DRO||819
+|-
+|Feedrate Override (FRO)||821
+|-
+|Tool number DRO||824
+|-
+|Rot A diameter DRO||825
+|-
+|Rot B diameter DRO||826
+|-
+|Rot C diameter DRO||827
+|-
+|Jog Inc DRO||828
+|-
+|X Fixture Off DRO||830
+|-
+|X Fixture Orig Off DRO||830
+|-
+|Y Fixture Off DRO||831
+|-
+|Y Fixture Orig Off DRO||831
+|-
+|Z Fixture Off DRO||832
+|-
+|Z Fixture Orig Off DRO||832
+|-
+|A Fixture Off DRO||833
+|-
+|A Fixture Orig Off DRO||833
+|-
+|B Fixture Orig Off DRO||834
+|-
+|B Fixture Off DRO||834
+|-
+|C Fixture Orig Off DRO||835
+|-
+|C Fixture Off DRO||835
+|-
+|Current Tool length DRO||836
+|}

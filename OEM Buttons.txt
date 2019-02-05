@@ -1,0 +1,587 @@
+This list gives the codes to be used in calls of DoOEMButton. 
+
+If you are using a version of Mach3 prior to 1.90 then to use bunttons in this list that are in the range 1000 upwards you will need to refer to the deprecated call DoButton and corresponding codes. 
+
+
+
+{|border="1" cellpadding = "1"
+!width="300"|Function
+!width="50|OEMCode
+|-
+|Screen 1 select(e.g. Program Run screen) ||1
+|-
+|Screen 2 select (e.g. MDI screen select) ||2
+|-
+|e.g. Toolpath screen select||3
+|-
+|e.g. Positioning screen select||4
+|-
+|e.g. Diagnostics screen select||5
+|-
+|e.g. Corrections screen select||6
+|-
+|e.g. Tables screen select||7
+|-
+|Inc Inc Up||100
+|-
+|Inc Inc Down||101
+|-
+|Reset Interp||102
+|-
+|Jog mode toggle||103
+|-
+|Goto Safe Z||104
+|-
+|Home Z then X then Y, A, B, C - set machine coords||105
+|-
+|Units||106
+|-
+|Mach coords||107
+|-
+|Feed raise||108
+|-
+|Feed lower||109
+|-
+|Spindle CW, reset THC height||110
+|-
+|Slow Jog Up||111
+|-
+|Slow Jog Dn||112
+|-
+|Flood toggle||113
+|-
+|Mist toggle||114
+|-
+|Edit G-code||115
+|-
+|Zero radius DRO on X||116
+|-
+|Zero radius DRO on Y||117
+|-
+|Zero radius DRO on Z||118
+|-
+|Software limits||119
+|-
+|Touch button for Tool length offset||120
+|-
+|Tool Tab Save||121
+|-
+|Fixture Tab Save||122
+|-
+|Torch Enable Toggle||123
+|-
+|Torch Cal Zero||124
+|-
+|Enc Load X||125
+|-
+|Enc To X||126
+|-
+|Enc Load Y||127
+|-
+|Enc To Y||128
+|-
+|Enc Load Z||129
+|-
+|Enc To Z||130
+|-
+|Toggle Mill/Turn mode||131
+|-
+|Tool Path Toggle||132
+|-
+|Zero X Encoder||133
+|-
+|Zero Y Encoder||134
+|-
+|Zero Z Encoder||135
+|-
+|Tool Offset Tog||136
+|-
+|Fixture Off||137
+|-
+|Go Home||138
+|-
+|Part X Offset Touch||139
+|-
+|Part Y Offset Touch||140
+|-
+|Part Z Offset Touch||141
+|-
+|Part A Offset Touch||142
+|-
+|Part B Offset Touch||143
+|-
+|Part C Offset Touch||144
+|-
+|Tool X Offset Touch||145
+|-
+|Tool Z Offset Touch||146
+|-
+|Joy Throttle select||147
+|-
+|Touch Corr Enable Toggle||148
+|-
+|Auto Lim Override Toggle||149
+|-
+|OverRide Limits||150
+|-
+|SS on Act4 Toggle||151
+|-
+|reserved||152
+|-
+|reserved||153
+|-
+|reserved||154
+|-
+|Units/rev - Units/min toggle||155
+|-
+|Set this line as next to execute||156
+|-
+|Jog Follow||157
+|-
+|Joystick ON||158
+|-
+|Joystick OFF||159
+|-
+|Regen toolpath display||160
+|-
+|Zero X-Z to stock as defined in DROs (Turn)||161
+|-
+|Coordinate mode (G90/91)||162
+|-
+|Raise spindle speed||163
+|-
+|Lower spindle speed||164
+|-
+|Laser Probe Enable Toggle||165
+|-
+|Zero laser grid at current location||166
+|-
+|Z inhibit toggle||167
+|-
+|Ignore Tool Change toggle||168
+|-
+|Close current file||169
+|-
+|Re-load last file||170
+|-
+|Jog increment cycle||171
+|-
+|Clear error label||172
+|-
+|Spindle CCW toggle||173
+|-
+|Parallel Port Encoder3 MPG Jog Toggle||174
+|-
+|Cycle axis controlled by MPG 1||175
+|-
+|Block Delete "switch" toggle||176
+|-
+|Optional Stop "switch" toggle||177
+|-
+|Offline toggle||178
+|-
+|Display Abs Machine coordinates (i.e. macnine coords ON)||179
+|-
+|Display Work + G92 coordinates (i.e. Machine coords OFF)||180
+|-
+|Display Work  coords (i.e. not with G92)||181
+|-
+|??? Toggle Spindle actual||182
+|-
+|Home X, Home Z (Turn)||184
+|-
+|Select X for MPG 1||185
+|-
+|Select Y for MPG 1||186
+|-
+|Select Z for MPG 1||187
+|-
+|Select A for MPG 1||188
+|-
+|Select B for MPG 1||189
+|-
+|Select C for MPG 1||190
+|-
+|Select Jog Increment 1||191
+|-
+|Select Jog Increment 2||192
+|-
+|Select Jog Increment 3||193
+|-
+|Select Jog Increment 4||194
+|-
+|Select Jog Increment 5||195
+|-
+|Select Jog Increment 6||196
+|-
+|Select Jog Increment 7||197
+|-
+|Select Jog Increment 8||198
+|-
+|Select Jog Increment 9||199
+|-
+|Select Jog Increment 10||200
+|-
+|Feed override Off||201
+|-
+|Feed override Jog||202
+|-
+|Feed override Feed||203
+|-
+|Jog mode Continuous (same as button 276)||204
+|-
+|Jog mode Step (same as button 275)||205
+|-
+|Joystick On||206
+|-
+|Joystick Off||207
+|-
+|Clear Z tool offset (Turn)||208
+|-
+|Clear X tool offset (Turn)||209
+|-
+|Set stock correction to Zero (Turn)||210
+|-
+|Home X Home Z (Turn)||211
+|-
+|Home X (Turn)||212
+|-
+|Home Z (Turn)||213
+|-
+|Show recent G-code files list||214
+|-
+|Display history||215
+|-
+|Load G-code||216
+|-
+|Tool flip toggle (Turn front/rear toolposts)||217
+|-
+|Z-inhibit ON||218
+|-
+|Z-inhibit OFF||219
+|-
+|Port Bit-Test Set (diagnostic)||220
+|-
+|Anti-dive enabled toggle||221
+|-
+|THC Anti-dive OFF||222
+|-
+|THC Anti-dive ON||223
+|-
+|Flood ON||224
+|-
+|Flood OFF||225
+|-
+|Mist ON||226
+|-
+|Mist OFF||227
+|-
+|Load Teach file||228
+|-
+|Toolpath Machine/Job toggle||229
+|-
+|Display Wizard selection window||230
+|-
+|Load the normal screens when Wizard done||231
+|-
+|Simple Complex screen toggle||232
+|-
+|Output 4 ON||233
+|-
+|Output 4 OFF||234
+|-
+|Output 5 ON||235
+|-
+|Output 5 OFF||236
+|-
+|Output 6 ON||237
+|-
+|Output 6 OFF||238
+|-
+|Set Help context||239
+|-
+|Def-Ref all axes||240
+|-
+|Tangential toggle||241
+|-
+|Save XYZ to G59.254 work offset||242
+|-
+|do G0G53 to G59.254 offset location||243
+|-
+|Move to G59.254 with midpoint selection||244
+|-
+|Toggle Jog Mode through Cont/Step/MPG as relevant||245
+|-
+|Force Referenced on all axes||246
+|-
+|CV feed toggle||247
+|-
+|CV feed OFF||248
+|-
+|CV feed ON||249
+|-
+|Disable movement on axis X||250
+|-
+|Disable movement on axis Y||251
+|-
+|Disable movement on axis Z||252
+|-
+|Disable movement on axis A||253
+|-
+|Disable movement on axis B||254
+|-
+|Disable movement on axis C||255
+|-
+|Machine Coordinates toggle||256
+|-
+
+|Engine OFFline||257
+|-
+|Engine ONline||258
+|-
+|Select encoder jog on axis X||259
+|-
+|Select encoder jog on axis Y||260
+|-
+|Select encoder jog on axis Z||261
+|-
+|Select encoder jog on axis A||262
+|-
+|Select encoder jog on axis B||263
+|-
+|Select encoder jog on axis C||264
+|-
+|Select Step value 1||265
+|-
+|Select Step value 2||266
+|-
+|Select Step value 3||267
+|-
+|Select Step value 4||268
+|-
+|Select Step value 5||269
+|-
+|Select Step value 6||270
+|-
+|Select Step value 7||271
+|-
+|Select Step value 8||272
+|-
+|Select Step value 9||273
+|-
+|Select Step value 10||274
+|-
+|Set Jog mode STEP (same as button 205)||275
+|-
+|Set Jog mode CONT (same as button 204)||276
+|-
+|Increment feedrate||277
+|-
+|Decrement feedrate||278
+|-
+|Run reverse||279
+|-
+|Switch to last used Wizard||280
+|-
+|Cycle axis controlled by MPG 2||281
+|-
+|Toggle taper mode on MPG 2||282
+|-
+|Toggle dual MPG flag||283
+|-
+|Toggle shuttle mode for MPG||284
+|-
+|Return to paused state||285
+|-
+|Remember paused state||286
+|-
+|Toggle override of rapid feeds||287
+|-
+|Crop current dwell now||288
+|-
+|??? Set formlas||289
+|-
+|Inhibit jog of X axis||290
+|-
+|Inhibit jog of Y axis||291
+|-
+|Inhibit jog of Z axis||292
+|-
+|Inhibit jog of A axis||293
+|-
+|Inhibit jog of B axis||294
+|-
+|Inhibit jog of C axis||295
+|-
+|Do screw calibration routine||296
+|-
+|Unconditional crop any dwell now||297
+|-
+|reserved||298
+|-
+|Toggle bypass feed (enables value in OEM DRO 122)||299
+|-
+|Toggle current tool is in front toolpost||300
+|-
+|Code for OEMTriggers runs the macro in SetTriggerMacro||301
+|-
+|Cycle MPG jogging mode||302
+|-
+|Set MPG jogging mode = Velocity||303
+|-
+|Set MPG jogging mode = Velocity/Step||304
+|-
+|Set MPG jogging mode = do single eaxct steps||305
+|-
+|Set MPG jogging mode = do multiple exact steps||306
+|-
+|Push to jog X++||307
+|-
+|Push to jog X--||308
+|-
+|Push to jog Y++||309
+|-
+|Push to jog Y--||310
+|-
+|Push to jog Z++||311
+|-
+|Push to jog Z--||312
+|-
+|Push to jog A++||313
+|-
+|Push to jog A--||314
+|-
+|Calibrate MPGs||315
+|-
+|Save tool table||316
+|-
+|Save work offset table||317
+|-
+|Drag on toolpath does Zoom toggle||318
+|-
+|Drag on toolpath does Pan toggle||319
+|-
+|Display Wizard select dialog||320
+|-
+|Run Newfangled Wizard||321
+|-
+|Emergency bailout - tester use only||322
+|-
+|Toggle visibility of screen 50||323
+|-
+|Turn mode tool touch off X axis||324
+|-
+|Toggle use of spindle step line to control Torch volts||325
+|-
+|Turn mode tool touch off Z axis||326
+|-
+|Select MPG jog mode||327
+|-
+|unknown||328
+|-
+|Push to Jog B++||329
+|-
+|Push to Jog B--||330
+|-
+|Push to Jog C++||331
+|-
+|Push to Jog C--||332
+|-
+|Toggle axis DROs display Dist to Go||333
+|-
+|Toggle X jog off||334
+|-
+|Toggle Y jog off||335
+|-
+|Toggle Z jog off||336
+|-
+|Toggle A jog off||337
+|-
+|Toggle B jog off||338
+|-
+|Toggle C jog off||339
+|-
+|Set a temporary softlimit minimum at current location||340
+|-
+|Set a temporary softlimit maximum at current location||341
+|-
+|reserved||343 - 347
+|-
+|Turn off display of menu bar||348
+|-
+|Turn on display of menu bar||349
+|-
+|Increment spindle speed by value not % (Turn)||350
+|-
+|Decrement spindle speed by value not % (Turn)||351
+|-
+|Jog X and A axis ++ together (foam machines)||352
+|-
+|Jog X and A axis -- together (foam machines)||353
+|-
+|Jog Y and B axis ++ together (foam machines)||354
+|-
+|Jog Y and B axis -- together (foam machines)||355
+|-
+|Cycle start||1000
+|-
+|Pause (Feed Hold)||1001
+|-
+|Rewind||1002
+|-
+|Stop||1003
+|-
+|Single||1004
+|-
+|Resume||1005
+|-
+|Edit File||1006
+|-
+|Zero All||1007
+|-
+|Zero X||1008
+|-
+|Zero Y||1009
+|-
+|Zero Z||1010
+|-
+|Zero A||1011
+|-
+|Zero B||1012
+|-
+|Zero C||1013
+|-
+|Feedrate reset||1014
+|-
+|Estimate Job||1015
+|-
+|Run from here||1016
+|-
+|GotoZs||1017
+|-
+|Coord System||1018
+|-
+|Verify||1020
+|-
+|Reset||1021
+|-
+|Ref X||1022
+|-
+|Ref Y||1023
+|-
+|Ref Z||1024
+|-
+|Ref A||1025
+|-
+|Ref B||1026
+|-
+|Ref C||1027
+|-
+|Joystick Toggle||1028
+|-
+|Softlimits Toggle||1029
+|-
+|Radius Tracking Toggle||1030
+|-
+|Jog Toggle||1031
+|}
