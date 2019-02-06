@@ -1,6 +1,7 @@
 using System;
+using System.Collections;
 using System.Runtime.InteropServices;
-
+using System.IO;
 using System.Windows.Forms;
 using Mach4;
 using Cnc;
@@ -35,28 +36,16 @@ namespace Cnc
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.TabPage tabPage4;
 		private System.Windows.Forms.PictureBox pictureBox3;
-		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Label label9;
 		private System.Windows.Forms.Label label10;
-		private System.Windows.Forms.NumericUpDown numericUpDown7;
-		private System.Windows.Forms.CheckBox checkBox3;
-		private System.Windows.Forms.NumericUpDown numericUpDown9;
 		private System.Windows.Forms.Label label12;
-		private System.Windows.Forms.NumericUpDown numericUpDown8;
 		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.NumericUpDown numericUpDown10;
 		private System.Windows.Forms.Label label13;
-		private System.Windows.Forms.RadioButton radioButton5;
-		private System.Windows.Forms.RadioButton radioButton6;
-		private System.Windows.Forms.RadioButton radioButton7;
 		private System.Windows.Forms.PictureBox pictureBox4;
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Label lbTokarFile;
 		private System.Windows.Forms.Label label14;
-		private System.Windows.Forms.NumericUpDown numericUpDown11;
 		private System.Windows.Forms.Label label15;
-		private System.Windows.Forms.NumericUpDown numericUpDown12;
 		private System.Windows.Forms.NumericUpDown vT1_H;
 		private System.Windows.Forms.NumericUpDown vT1_W;
 		private System.Windows.Forms.NumericUpDown vT1_L;
@@ -76,6 +65,20 @@ namespace Cnc
 		private System.Windows.Forms.NumericUpDown vT2_X;
 		private System.Windows.Forms.NumericUpDown vT2_Count;
 		private System.Windows.Forms.NumericUpDown vT2_t2Depth;
+		private System.Windows.Forms.RadioButton vT3_t1;
+		private System.Windows.Forms.NumericUpDown vT3_Depth;
+		private System.Windows.Forms.NumericUpDown vT3_Count;
+		private System.Windows.Forms.CheckBox vT3_noX;
+		private System.Windows.Forms.NumericUpDown vT3_X;
+		private System.Windows.Forms.NumericUpDown vT3_W;
+		private System.Windows.Forms.TextBox vT3_L;
+		private System.Windows.Forms.RadioButton vT3_t4;
+		private System.Windows.Forms.RadioButton vT3_t3;
+		private System.Windows.Forms.NumericUpDown vT4_Depth;
+		private System.Windows.Forms.NumericUpDown vT4_D;
+		private System.Windows.Forms.Label vT4_FileName;
+		private System.Windows.Forms.NumericUpDown vT1_S;
+		private System.Windows.Forms.Label label17;
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -130,6 +133,10 @@ namespace Cnc
 			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(Form1));
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.label17 = new System.Windows.Forms.Label();
+			this.vT1_S = new System.Windows.Forms.NumericUpDown();
+			this.vT1_Podrez = new System.Windows.Forms.NumericUpDown();
+			this.label16 = new System.Windows.Forms.Label();
 			this.imCutType2 = new System.Windows.Forms.PictureBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.vT1_H = new System.Windows.Forms.NumericUpDown();
@@ -160,37 +167,37 @@ namespace Cnc
 			this.label4 = new System.Windows.Forms.Label();
 			this.pictureBox2 = new System.Windows.Forms.PictureBox();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
-			this.radioButton5 = new System.Windows.Forms.RadioButton();
-			this.radioButton6 = new System.Windows.Forms.RadioButton();
-			this.radioButton7 = new System.Windows.Forms.RadioButton();
-			this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
+			this.vT3_t4 = new System.Windows.Forms.RadioButton();
+			this.vT3_t3 = new System.Windows.Forms.RadioButton();
+			this.vT3_t1 = new System.Windows.Forms.RadioButton();
+			this.vT3_Depth = new System.Windows.Forms.NumericUpDown();
 			this.label11 = new System.Windows.Forms.Label();
-			this.numericUpDown10 = new System.Windows.Forms.NumericUpDown();
+			this.vT3_Count = new System.Windows.Forms.NumericUpDown();
 			this.label13 = new System.Windows.Forms.Label();
-			this.checkBox3 = new System.Windows.Forms.CheckBox();
-			this.numericUpDown9 = new System.Windows.Forms.NumericUpDown();
+			this.vT3_noX = new System.Windows.Forms.CheckBox();
+			this.vT3_X = new System.Windows.Forms.NumericUpDown();
 			this.label12 = new System.Windows.Forms.Label();
-			this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
+			this.vT3_W = new System.Windows.Forms.NumericUpDown();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.vT3_L = new System.Windows.Forms.TextBox();
 			this.pictureBox3 = new System.Windows.Forms.PictureBox();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
-			this.numericUpDown12 = new System.Windows.Forms.NumericUpDown();
+			this.vT4_Depth = new System.Windows.Forms.NumericUpDown();
 			this.label15 = new System.Windows.Forms.Label();
-			this.numericUpDown11 = new System.Windows.Forms.NumericUpDown();
+			this.vT4_D = new System.Windows.Forms.NumericUpDown();
 			this.label14 = new System.Windows.Forms.Label();
-			this.lbTokarFile = new System.Windows.Forms.Label();
+			this.vT4_FileName = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
 			this.pictureBox4 = new System.Windows.Forms.PictureBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.btStop = new System.Windows.Forms.Button();
 			this.btStart = new System.Windows.Forms.Button();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-			this.label16 = new System.Windows.Forms.Label();
-			this.vT1_Podrez = new System.Windows.Forms.NumericUpDown();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.vT1_S)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.vT1_Podrez)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.vT1_H)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.vT1_W)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.vT1_L)).BeginInit();
@@ -202,15 +209,14 @@ namespace Cnc
 			((System.ComponentModel.ISupportInitialize)(this.vT2_X)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.vT2_Count)).BeginInit();
 			this.tabPage3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.vT3_Depth)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.vT3_Count)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.vT3_X)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.vT3_W)).BeginInit();
 			this.tabPage4.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.vT4_Depth)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.vT4_D)).BeginInit();
 			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.vT1_Podrez)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tabControl1
@@ -228,6 +234,8 @@ namespace Cnc
 			// 
 			// tabPage1
 			// 
+			this.tabPage1.Controls.Add(this.label17);
+			this.tabPage1.Controls.Add(this.vT1_S);
 			this.tabPage1.Controls.Add(this.vT1_Podrez);
 			this.tabPage1.Controls.Add(this.label16);
 			this.tabPage1.Controls.Add(this.imCutType2);
@@ -247,12 +255,52 @@ namespace Cnc
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "Раскрой";
 			// 
+			// label17
+			// 
+			this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.label17.Location = new System.Drawing.Point(24, 144);
+			this.label17.Name = "label17";
+			this.label17.Size = new System.Drawing.Size(32, 23);
+			this.label17.TabIndex = 16;
+			this.label17.Text = "S";
+			// 
+			// vT1_S
+			// 
+			this.vT1_S.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.vT1_S.Location = new System.Drawing.Point(64, 144);
+			this.vT1_S.Name = "vT1_S";
+			this.vT1_S.Size = new System.Drawing.Size(176, 29);
+			this.vT1_S.TabIndex = 15;
+			// 
+			// vT1_Podrez
+			// 
+			this.vT1_Podrez.Enabled = false;
+			this.vT1_Podrez.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.vT1_Podrez.Location = new System.Drawing.Point(184, 304);
+			this.vT1_Podrez.Name = "vT1_Podrez";
+			this.vT1_Podrez.Size = new System.Drawing.Size(96, 29);
+			this.vT1_Podrez.TabIndex = 14;
+			this.vT1_Podrez.Value = new System.Decimal(new int[] {
+																	 4,
+																	 0,
+																	 0,
+																	 0});
+			// 
+			// label16
+			// 
+			this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.label16.Location = new System.Drawing.Point(16, 304);
+			this.label16.Name = "label16";
+			this.label16.Size = new System.Drawing.Size(168, 23);
+			this.label16.TabIndex = 13;
+			this.label16.Text = "Глубина подреза";
+			// 
 			// imCutType2
 			// 
 			this.imCutType2.Image = ((System.Drawing.Image)(resources.GetObject("imCutType2.Image")));
-			this.imCutType2.Location = new System.Drawing.Point(256, 24);
+			this.imCutType2.Location = new System.Drawing.Point(256, 16);
 			this.imCutType2.Name = "imCutType2";
-			this.imCutType2.Size = new System.Drawing.Size(416, 272);
+			this.imCutType2.Size = new System.Drawing.Size(408, 272);
 			this.imCutType2.TabIndex = 12;
 			this.imCutType2.TabStop = false;
 			this.imCutType2.Visible = false;
@@ -298,7 +346,7 @@ namespace Cnc
 			// vT1_DirectL
 			// 
 			this.vT1_DirectL.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.vT1_DirectL.Location = new System.Drawing.Point(48, 184);
+			this.vT1_DirectL.Location = new System.Drawing.Point(48, 224);
 			this.vT1_DirectL.Name = "vT1_DirectL";
 			this.vT1_DirectL.Size = new System.Drawing.Size(152, 24);
 			this.vT1_DirectL.TabIndex = 6;
@@ -309,7 +357,7 @@ namespace Cnc
 			// 
 			this.vT1_DirectW.Checked = true;
 			this.vT1_DirectW.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.vT1_DirectW.Location = new System.Drawing.Point(48, 152);
+			this.vT1_DirectW.Location = new System.Drawing.Point(48, 192);
 			this.vT1_DirectW.Name = "vT1_DirectW";
 			this.vT1_DirectW.Size = new System.Drawing.Size(152, 24);
 			this.vT1_DirectW.TabIndex = 5;
@@ -319,7 +367,7 @@ namespace Cnc
 			// vT1_2
 			// 
 			this.vT1_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.vT1_2.Location = new System.Drawing.Point(48, 224);
+			this.vT1_2.Location = new System.Drawing.Point(48, 264);
 			this.vT1_2.Name = "vT1_2";
 			this.vT1_2.Size = new System.Drawing.Size(120, 24);
 			this.vT1_2.TabIndex = 3;
@@ -343,7 +391,6 @@ namespace Cnc
 			this.label2.Size = new System.Drawing.Size(32, 23);
 			this.label2.TabIndex = 1;
 			this.label2.Text = "W";
-			this.label2.Click += new System.EventHandler(this.label2_Click);
 			// 
 			// label1
 			// 
@@ -479,7 +526,6 @@ namespace Cnc
 																0,
 																0,
 																0});
-			this.vT2_W.ValueChanged += new System.EventHandler(this.numericUpDown4_ValueChanged);
 			// 
 			// vT2_H
 			// 
@@ -562,20 +608,20 @@ namespace Cnc
 			// 
 			// tabPage3
 			// 
-			this.tabPage3.Controls.Add(this.radioButton5);
-			this.tabPage3.Controls.Add(this.radioButton6);
-			this.tabPage3.Controls.Add(this.radioButton7);
-			this.tabPage3.Controls.Add(this.numericUpDown8);
+			this.tabPage3.Controls.Add(this.vT3_t4);
+			this.tabPage3.Controls.Add(this.vT3_t3);
+			this.tabPage3.Controls.Add(this.vT3_t1);
+			this.tabPage3.Controls.Add(this.vT3_Depth);
 			this.tabPage3.Controls.Add(this.label11);
-			this.tabPage3.Controls.Add(this.numericUpDown10);
+			this.tabPage3.Controls.Add(this.vT3_Count);
 			this.tabPage3.Controls.Add(this.label13);
-			this.tabPage3.Controls.Add(this.checkBox3);
-			this.tabPage3.Controls.Add(this.numericUpDown9);
+			this.tabPage3.Controls.Add(this.vT3_noX);
+			this.tabPage3.Controls.Add(this.vT3_X);
 			this.tabPage3.Controls.Add(this.label12);
-			this.tabPage3.Controls.Add(this.numericUpDown7);
+			this.tabPage3.Controls.Add(this.vT3_W);
 			this.tabPage3.Controls.Add(this.label10);
 			this.tabPage3.Controls.Add(this.label9);
-			this.tabPage3.Controls.Add(this.textBox1);
+			this.tabPage3.Controls.Add(this.vT3_L);
 			this.tabPage3.Controls.Add(this.pictureBox3);
 			this.tabPage3.Location = new System.Drawing.Point(4, 22);
 			this.tabPage3.Name = "tabPage3";
@@ -583,47 +629,47 @@ namespace Cnc
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "Присадка фронтальная";
 			// 
-			// radioButton5
+			// vT3_t4
 			// 
-			this.radioButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.radioButton5.Location = new System.Drawing.Point(288, 312);
-			this.radioButton5.Name = "radioButton5";
-			this.radioButton5.Size = new System.Drawing.Size(400, 24);
-			this.radioButton5.TabIndex = 26;
-			this.radioButton5.Text = "только 2 под стяжки (меньший диаметр)";
+			this.vT3_t4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.vT3_t4.Location = new System.Drawing.Point(288, 312);
+			this.vT3_t4.Name = "vT3_t4";
+			this.vT3_t4.Size = new System.Drawing.Size(400, 24);
+			this.vT3_t4.TabIndex = 26;
+			this.vT3_t4.Text = "только 2 под стяжки (меньший диаметр)";
 			// 
-			// radioButton6
+			// vT3_t3
 			// 
-			this.radioButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.radioButton6.Location = new System.Drawing.Point(288, 280);
-			this.radioButton6.Name = "radioButton6";
-			this.radioButton6.Size = new System.Drawing.Size(312, 24);
-			this.radioButton6.TabIndex = 25;
-			this.radioButton6.Text = "2 под стяжки пропустить";
+			this.vT3_t3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.vT3_t3.Location = new System.Drawing.Point(288, 280);
+			this.vT3_t3.Name = "vT3_t3";
+			this.vT3_t3.Size = new System.Drawing.Size(312, 24);
+			this.vT3_t3.TabIndex = 25;
+			this.vT3_t3.Text = "2 под стяжки пропустить";
 			// 
-			// radioButton7
+			// vT3_t1
 			// 
-			this.radioButton7.Checked = true;
-			this.radioButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.radioButton7.Location = new System.Drawing.Point(288, 248);
-			this.radioButton7.Name = "radioButton7";
-			this.radioButton7.Size = new System.Drawing.Size(224, 32);
-			this.radioButton7.TabIndex = 24;
-			this.radioButton7.TabStop = true;
-			this.radioButton7.Text = "Все одинаковые";
+			this.vT3_t1.Checked = true;
+			this.vT3_t1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.vT3_t1.Location = new System.Drawing.Point(288, 248);
+			this.vT3_t1.Name = "vT3_t1";
+			this.vT3_t1.Size = new System.Drawing.Size(224, 32);
+			this.vT3_t1.TabIndex = 24;
+			this.vT3_t1.TabStop = true;
+			this.vT3_t1.Text = "Все одинаковые";
 			// 
-			// numericUpDown8
+			// vT3_Depth
 			// 
-			this.numericUpDown8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.numericUpDown8.Location = new System.Drawing.Point(24, 280);
-			this.numericUpDown8.Name = "numericUpDown8";
-			this.numericUpDown8.Size = new System.Drawing.Size(96, 29);
-			this.numericUpDown8.TabIndex = 23;
-			this.numericUpDown8.Value = new System.Decimal(new int[] {
-																		 16,
-																		 0,
-																		 0,
-																		 0});
+			this.vT3_Depth.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.vT3_Depth.Location = new System.Drawing.Point(24, 280);
+			this.vT3_Depth.Name = "vT3_Depth";
+			this.vT3_Depth.Size = new System.Drawing.Size(96, 29);
+			this.vT3_Depth.TabIndex = 23;
+			this.vT3_Depth.Value = new System.Decimal(new int[] {
+																	16,
+																	0,
+																	0,
+																	0});
 			// 
 			// label11
 			// 
@@ -634,18 +680,18 @@ namespace Cnc
 			this.label11.TabIndex = 22;
 			this.label11.Text = "Глубина отверстий";
 			// 
-			// numericUpDown10
+			// vT3_Count
 			// 
-			this.numericUpDown10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.numericUpDown10.Location = new System.Drawing.Point(24, 208);
-			this.numericUpDown10.Name = "numericUpDown10";
-			this.numericUpDown10.Size = new System.Drawing.Size(96, 29);
-			this.numericUpDown10.TabIndex = 21;
-			this.numericUpDown10.Value = new System.Decimal(new int[] {
-																		  7,
-																		  0,
-																		  0,
-																		  0});
+			this.vT3_Count.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.vT3_Count.Location = new System.Drawing.Point(24, 208);
+			this.vT3_Count.Name = "vT3_Count";
+			this.vT3_Count.Size = new System.Drawing.Size(96, 29);
+			this.vT3_Count.TabIndex = 21;
+			this.vT3_Count.Value = new System.Decimal(new int[] {
+																	7,
+																	0,
+																	0,
+																	0});
 			// 
 			// label13
 			// 
@@ -656,22 +702,22 @@ namespace Cnc
 			this.label13.TabIndex = 20;
 			this.label13.Text = "Количество отверстий";
 			// 
-			// checkBox3
+			// vT3_noX
 			// 
-			this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.checkBox3.Location = new System.Drawing.Point(152, 152);
-			this.checkBox3.Name = "checkBox3";
-			this.checkBox3.Size = new System.Drawing.Size(152, 24);
-			this.checkBox3.TabIndex = 19;
-			this.checkBox3.Text = "отступить X";
+			this.vT3_noX.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.vT3_noX.Location = new System.Drawing.Point(152, 152);
+			this.vT3_noX.Name = "vT3_noX";
+			this.vT3_noX.Size = new System.Drawing.Size(152, 24);
+			this.vT3_noX.TabIndex = 19;
+			this.vT3_noX.Text = "отступить X";
 			// 
-			// numericUpDown9
+			// vT3_X
 			// 
-			this.numericUpDown9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.numericUpDown9.Location = new System.Drawing.Point(72, 152);
-			this.numericUpDown9.Name = "numericUpDown9";
-			this.numericUpDown9.Size = new System.Drawing.Size(72, 29);
-			this.numericUpDown9.TabIndex = 18;
+			this.vT3_X.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.vT3_X.Location = new System.Drawing.Point(72, 152);
+			this.vT3_X.Name = "vT3_X";
+			this.vT3_X.Size = new System.Drawing.Size(72, 29);
+			this.vT3_X.TabIndex = 18;
 			// 
 			// label12
 			// 
@@ -682,23 +728,23 @@ namespace Cnc
 			this.label12.TabIndex = 17;
 			this.label12.Text = "X";
 			// 
-			// numericUpDown7
+			// vT3_W
 			// 
-			this.numericUpDown7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.numericUpDown7.Location = new System.Drawing.Point(72, 112);
-			this.numericUpDown7.Maximum = new System.Decimal(new int[] {
-																		   500,
-																		   0,
-																		   0,
-																		   0});
-			this.numericUpDown7.Name = "numericUpDown7";
-			this.numericUpDown7.Size = new System.Drawing.Size(104, 29);
-			this.numericUpDown7.TabIndex = 15;
-			this.numericUpDown7.Value = new System.Decimal(new int[] {
-																		 400,
-																		 0,
-																		 0,
-																		 0});
+			this.vT3_W.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.vT3_W.Location = new System.Drawing.Point(72, 112);
+			this.vT3_W.Maximum = new System.Decimal(new int[] {
+																  500,
+																  0,
+																  0,
+																  0});
+			this.vT3_W.Name = "vT3_W";
+			this.vT3_W.Size = new System.Drawing.Size(104, 29);
+			this.vT3_W.TabIndex = 15;
+			this.vT3_W.Value = new System.Decimal(new int[] {
+																400,
+																0,
+																0,
+																0});
 			// 
 			// label10
 			// 
@@ -718,15 +764,15 @@ namespace Cnc
 			this.label9.TabIndex = 3;
 			this.label9.Text = "L1,2..";
 			// 
-			// textBox1
+			// vT3_L
 			// 
-			this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.textBox1.Location = new System.Drawing.Point(72, 16);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(100, 88);
-			this.textBox1.TabIndex = 1;
-			this.textBox1.Text = "";
+			this.vT3_L.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.vT3_L.Location = new System.Drawing.Point(72, 16);
+			this.vT3_L.Multiline = true;
+			this.vT3_L.Name = "vT3_L";
+			this.vT3_L.Size = new System.Drawing.Size(100, 88);
+			this.vT3_L.TabIndex = 1;
+			this.vT3_L.Text = "";
 			// 
 			// pictureBox3
 			// 
@@ -739,11 +785,11 @@ namespace Cnc
 			// 
 			// tabPage4
 			// 
-			this.tabPage4.Controls.Add(this.numericUpDown12);
+			this.tabPage4.Controls.Add(this.vT4_Depth);
 			this.tabPage4.Controls.Add(this.label15);
-			this.tabPage4.Controls.Add(this.numericUpDown11);
+			this.tabPage4.Controls.Add(this.vT4_D);
 			this.tabPage4.Controls.Add(this.label14);
-			this.tabPage4.Controls.Add(this.lbTokarFile);
+			this.tabPage4.Controls.Add(this.vT4_FileName);
 			this.tabPage4.Controls.Add(this.button1);
 			this.tabPage4.Controls.Add(this.pictureBox4);
 			this.tabPage4.Location = new System.Drawing.Point(4, 22);
@@ -752,23 +798,23 @@ namespace Cnc
 			this.tabPage4.TabIndex = 3;
 			this.tabPage4.Text = "Токарная обработка";
 			// 
-			// numericUpDown12
+			// vT4_Depth
 			// 
-			this.numericUpDown12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.numericUpDown12.Location = new System.Drawing.Point(24, 160);
-			this.numericUpDown12.Maximum = new System.Decimal(new int[] {
-																			500,
-																			0,
-																			0,
-																			0});
-			this.numericUpDown12.Name = "numericUpDown12";
-			this.numericUpDown12.Size = new System.Drawing.Size(104, 29);
-			this.numericUpDown12.TabIndex = 18;
-			this.numericUpDown12.Value = new System.Decimal(new int[] {
-																		  10,
-																		  0,
-																		  0,
-																		  0});
+			this.vT4_Depth.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.vT4_Depth.Location = new System.Drawing.Point(56, 168);
+			this.vT4_Depth.Maximum = new System.Decimal(new int[] {
+																	  500,
+																	  0,
+																	  0,
+																	  0});
+			this.vT4_Depth.Name = "vT4_Depth";
+			this.vT4_Depth.Size = new System.Drawing.Size(104, 29);
+			this.vT4_Depth.TabIndex = 18;
+			this.vT4_Depth.Value = new System.Decimal(new int[] {
+																	10,
+																	0,
+																	0,
+																	0});
 			// 
 			// label15
 			// 
@@ -779,23 +825,23 @@ namespace Cnc
 			this.label15.TabIndex = 17;
 			this.label15.Text = "Максимальная глубина за проход";
 			// 
-			// numericUpDown11
+			// vT4_D
 			// 
-			this.numericUpDown11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.numericUpDown11.Location = new System.Drawing.Point(56, 88);
-			this.numericUpDown11.Maximum = new System.Decimal(new int[] {
-																			500,
-																			0,
-																			0,
-																			0});
-			this.numericUpDown11.Name = "numericUpDown11";
-			this.numericUpDown11.Size = new System.Drawing.Size(104, 29);
-			this.numericUpDown11.TabIndex = 16;
-			this.numericUpDown11.Value = new System.Decimal(new int[] {
-																		  40,
-																		  0,
-																		  0,
-																		  0});
+			this.vT4_D.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.vT4_D.Location = new System.Drawing.Point(56, 88);
+			this.vT4_D.Maximum = new System.Decimal(new int[] {
+																  500,
+																  0,
+																  0,
+																  0});
+			this.vT4_D.Name = "vT4_D";
+			this.vT4_D.Size = new System.Drawing.Size(104, 29);
+			this.vT4_D.TabIndex = 16;
+			this.vT4_D.Value = new System.Decimal(new int[] {
+																40,
+																0,
+																0,
+																0});
 			// 
 			// label14
 			// 
@@ -806,12 +852,12 @@ namespace Cnc
 			this.label14.TabIndex = 3;
 			this.label14.Text = "D";
 			// 
-			// lbTokarFile
+			// vT4_FileName
 			// 
-			this.lbTokarFile.Location = new System.Drawing.Point(232, 24);
-			this.lbTokarFile.Name = "lbTokarFile";
-			this.lbTokarFile.Size = new System.Drawing.Size(432, 23);
-			this.lbTokarFile.TabIndex = 2;
+			this.vT4_FileName.Location = new System.Drawing.Point(232, 24);
+			this.vT4_FileName.Name = "vT4_FileName";
+			this.vT4_FileName.Size = new System.Drawing.Size(432, 23);
+			this.vT4_FileName.TabIndex = 2;
 			// 
 			// button1
 			// 
@@ -821,6 +867,7 @@ namespace Cnc
 			this.button1.Size = new System.Drawing.Size(184, 40);
 			this.button1.TabIndex = 1;
 			this.button1.Text = "Загрузить файл...";
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// pictureBox4
 			// 
@@ -861,28 +908,9 @@ namespace Cnc
 			this.btStart.Text = "START";
 			this.btStart.Click += new System.EventHandler(this.btStart_Click_1);
 			// 
-			// label16
+			// openFileDialog1
 			// 
-			this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.label16.Location = new System.Drawing.Point(16, 264);
-			this.label16.Name = "label16";
-			this.label16.Size = new System.Drawing.Size(168, 23);
-			this.label16.TabIndex = 13;
-			this.label16.Text = "Глубина подреза";
-			// 
-			// vT1_Podrez
-			// 
-			this.vT1_Podrez.Enabled = false;
-			this.vT1_Podrez.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.vT1_Podrez.Location = new System.Drawing.Point(192, 264);
-			this.vT1_Podrez.Name = "vT1_Podrez";
-			this.vT1_Podrez.Size = new System.Drawing.Size(96, 29);
-			this.vT1_Podrez.TabIndex = 14;
-			this.vT1_Podrez.Value = new System.Decimal(new int[] {
-																	 4,
-																	 0,
-																	 0,
-																	 0});
+			this.openFileDialog1.Filter = "G-Code(*.ngc)|*.ngc|Text files(*.txt)|*.txt|All files(*.*)|*.*";
 			// 
 			// Form1
 			// 
@@ -894,6 +922,8 @@ namespace Cnc
 			this.Text = "CNC";
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.vT1_S)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.vT1_Podrez)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.vT1_H)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.vT1_W)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.vT1_L)).EndInit();
@@ -905,15 +935,14 @@ namespace Cnc
 			((System.ComponentModel.ISupportInitialize)(this.vT2_X)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.vT2_Count)).EndInit();
 			this.tabPage3.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.vT3_Depth)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.vT3_Count)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.vT3_X)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.vT3_W)).EndInit();
 			this.tabPage4.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown12)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.vT4_Depth)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.vT4_D)).EndInit();
 			this.panel1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.vT1_Podrez)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -932,19 +961,21 @@ namespace Cnc
 			foreach (string line in code) 
 			{
 				if(line != "")
+					//Console.WriteLine(line);
 					_mInst.Code(line);
 			}
 		}
 		
 		private void DoCutting() 
-		{	
+		{	            
 			RunCode(Cutting.getGCode(
 				vT1_L.Value, 
 				vT1_W.Value, 
 				vT1_H.Value, 
 				vT1_2.Checked, 
 				vT1_DirectW.Checked, 
-				vT1_Podrez.Value
+				vT1_Podrez.Value,
+				vT1_S.Value
 			));
     	}
 
@@ -970,12 +1001,39 @@ namespace Cnc
 
 		private void DoAdditiveFront()
 		{
+			int t = 1;
 
+			if(vT3_t3.Checked) t = 3; 
+			else if(vT3_t4.Checked) t = 4;
+
+			RunCode(AdditiveFront.getGCode(
+				vT3_L.Lines,
+				vT3_W.Value,
+				vT3_X.Value,
+				vT3_noX.Checked,				
+				vT3_Count.Value,
+				vT3_Depth.Value,
+				t
+			));
 		}
 
 		private void DoTurning()
 		{
-
+			if(vT4_FileName.Text == "")
+				return;
+			
+			ArrayList code = new ArrayList();            
+			StreamReader ReadFile = File.OpenText(vT4_FileName.Text);
+			string Input = null;
+			while ((Input = ReadFile.ReadLine()) != null) 
+			{
+				code.Add(Input);
+			} 
+			RunCode(Turning.getGCode(
+				code.ToArray(typeof(string)) as string[],
+				vT4_D.Value,
+				vT4_Depth.Value
+			));			
 		}
 
 
@@ -1000,33 +1058,28 @@ namespace Cnc
                     case 1: DoAdditiveButt();break;
                     case 2: DoAdditiveFront();break; 
 					case 3: DoTurning();break;
-				}
-				
-				
+				}				
 			}
 		}
 
-		private void label2_Click(object sender, System.EventArgs e)
-		{
-		
-		}
 
 		private void rdDirectL_CheckedChanged(object sender, System.EventArgs e)
 		{
 			imCutType2.Visible = vT1_DirectL.Checked;
-			
-			//  (rdDirectL.Checked) 
-
 		}
 
-		private void numericUpDown4_ValueChanged(object sender, System.EventArgs e)
-		{
-		
-		}
 
 		private void vT1_2_CheckedChanged(object sender, System.EventArgs e)
 		{
 			vT1_Podrez.Enabled = vT1_2.Checked;
+		}
+
+		private void button1_Click(object sender, System.EventArgs e)
+		{
+			if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
+				return;
+
+			vT4_FileName.Text = openFileDialog1.FileName;
 		}
 	}
 }

@@ -107,6 +107,11 @@
                     BuildAction = "Compile"
                 />
                 <File
+                    RelPath = "AdditiveFront.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
                     RelPath = "App.ico"
                     BuildAction = "Content"
                 />
@@ -128,6 +133,11 @@
                     RelPath = "Form1.resx"
                     DependentUpon = "Form1.cs"
                     BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "Turning.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
                 />
             </Include>
         </Files>

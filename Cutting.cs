@@ -4,7 +4,7 @@ namespace Cnc
 {
 	public class Cutting
 	{
-		public static string[] getGCode(decimal L, decimal W, decimal H, bool two, bool DirectW, decimal Podrez)
+		public static string[] getGCode(decimal L, decimal W, decimal H, bool two, bool DirectW, decimal Podrez, decimal S)
 		{	
 		
 			char l = DirectW? 'X':'Y';
@@ -14,7 +14,7 @@ namespace Cnc
 				"M3",
 				"F400",
 				"G00 Z" + (H+5).ToString(),
-				"G00 " + l + L.ToString() + " " + w + W.ToString(),
+				"G00 " + l + (L-S).ToString() + " " + w + W.ToString(),
 				two? "G00 Z" + (H-Podrez).ToString(): "",
 				two? "G01 " + w + "0":"",
 				two? "G00 Z" + (H+5).ToString():"",
