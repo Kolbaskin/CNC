@@ -17,11 +17,12 @@ namespace Cnc
 				currentPos = (float)X;
 
 			code.Add("G17 G21 G40 G54 G80 G90");
-			code.Add("M3");
-			code.Add("F400");
-
+				
 			code.Add("G00 X-5");
 			code.Add("G00 Z" + (H/2).ToString());
+			code.Add("M3");
+			code.Add("F400");
+			
 			
 			for(int i = 0; i < Count; i++) 
 			{
@@ -46,7 +47,7 @@ namespace Cnc
 			code.Add("M5");
 			code.Add("G00 Y5");
 			code.Add("G00 X0");
-			code.Add("M2");
+			//code.Add("M2");
 
 			return code.ToArray(typeof(string)) as string[];
 		}

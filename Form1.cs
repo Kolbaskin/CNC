@@ -79,6 +79,10 @@ namespace Cnc
 		private System.Windows.Forms.Label vT4_FileName;
 		private System.Windows.Forms.NumericUpDown vT1_S;
 		private System.Windows.Forms.Label label17;
+		private System.Windows.Forms.TabPage tabPage5;
+		private System.Windows.Forms.TextBox codeLog;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Button btRun;
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -190,6 +194,10 @@ namespace Cnc
 			this.vT4_FileName = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
 			this.pictureBox4 = new System.Windows.Forms.PictureBox();
+			this.tabPage5 = new System.Windows.Forms.TabPage();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.btRun = new System.Windows.Forms.Button();
+			this.codeLog = new System.Windows.Forms.TextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.btStop = new System.Windows.Forms.Button();
 			this.btStart = new System.Windows.Forms.Button();
@@ -216,6 +224,8 @@ namespace Cnc
 			this.tabPage4.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.vT4_Depth)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.vT4_D)).BeginInit();
+			this.tabPage5.SuspendLayout();
+			this.panel2.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -225,6 +235,7 @@ namespace Cnc
 			this.tabControl1.Controls.Add(this.tabPage2);
 			this.tabControl1.Controls.Add(this.tabPage3);
 			this.tabControl1.Controls.Add(this.tabPage4);
+			this.tabControl1.Controls.Add(this.tabPage5);
 			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tabControl1.Location = new System.Drawing.Point(0, 0);
 			this.tabControl1.Name = "tabControl1";
@@ -878,6 +889,45 @@ namespace Cnc
 			this.pictureBox4.TabIndex = 0;
 			this.pictureBox4.TabStop = false;
 			// 
+			// tabPage5
+			// 
+			this.tabPage5.Controls.Add(this.panel2);
+			this.tabPage5.Controls.Add(this.codeLog);
+			this.tabPage5.Location = new System.Drawing.Point(4, 22);
+			this.tabPage5.Name = "tabPage5";
+			this.tabPage5.Size = new System.Drawing.Size(688, 444);
+			this.tabPage5.TabIndex = 4;
+			this.tabPage5.Text = "Code";
+			// 
+			// panel2
+			// 
+			this.panel2.Controls.Add(this.btRun);
+			this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.panel2.Location = new System.Drawing.Point(0, 300);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(688, 144);
+			this.panel2.TabIndex = 1;
+			// 
+			// btRun
+			// 
+			this.btRun.Location = new System.Drawing.Point(16, 8);
+			this.btRun.Name = "btRun";
+			this.btRun.TabIndex = 0;
+			this.btRun.Text = "Run code";
+			this.btRun.Click += new System.EventHandler(this.btRun_Click);
+			// 
+			// codeLog
+			// 
+			this.codeLog.BackColor = System.Drawing.SystemColors.Window;
+			this.codeLog.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.codeLog.Location = new System.Drawing.Point(0, 0);
+			this.codeLog.Multiline = true;
+			this.codeLog.Name = "codeLog";
+			this.codeLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+			this.codeLog.Size = new System.Drawing.Size(688, 444);
+			this.codeLog.TabIndex = 0;
+			this.codeLog.Text = "";
+			// 
 			// panel1
 			// 
 			this.panel1.Controls.Add(this.btStop);
@@ -920,6 +970,7 @@ namespace Cnc
 			this.Controls.Add(this.tabControl1);
 			this.Name = "Form1";
 			this.Text = "CNC";
+			this.TopMost = true;
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.vT1_S)).EndInit();
@@ -942,6 +993,8 @@ namespace Cnc
 			this.tabPage4.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.vT4_Depth)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.vT4_D)).EndInit();
+			this.tabPage5.ResumeLayout(false);
+			this.panel2.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
@@ -958,11 +1011,32 @@ namespace Cnc
 
 		private void RunCode(string[] code) 
 		{
-			foreach (string line in code) 
+			using (StreamWriter outputFile = new StreamWriter("C:\\tmp\\gcode.txt"))
 			{
-				if(line != "")
-					//Console.WriteLine(line);
-					_mInst.Code(line);
+				codeLog.Clear();
+				foreach (string line in code) 
+				{
+					codeLog.AppendText(line + "\r\n");
+					outputFile.WriteLine(line);
+				}
+			}
+			_mInst.LoadFile("C:\\tmp\\gcode.txt");
+			System.Threading.Thread.Sleep(2000); // pause for the file loading
+			_mInst.DoOEMButton(1000);
+		}
+
+		private void RunTestCode(string[] code) 
+		{
+			GetMachInstance();
+			if(_mInst != null) 
+			{
+				foreach (string line in code) 
+				{
+					if(line != "") 
+					{					    
+						_mInst.Code(line);						
+					}
+				}
 			}
 		}
 		
@@ -1081,5 +1155,10 @@ namespace Cnc
 
 			vT4_FileName.Text = openFileDialog1.FileName;
 		}
+
+		private void btRun_Click(object sender, System.EventArgs e)
+		{
+			RunTestCode(codeLog.Lines);
+		}		
 	}
 }
