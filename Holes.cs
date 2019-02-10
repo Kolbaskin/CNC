@@ -8,6 +8,7 @@ namespace Cnc
 	{
 		private static float strToFloat(string s)
 		{
+			
 			return Convert.ToSingle(s, new CultureInfo("en-US"));
 		}
 
@@ -58,7 +59,7 @@ namespace Cnc
 		public static string[] getGCode(string[] Data, string Depth)
 		{	
 			ArrayList code = new ArrayList();
-			float D = strToFloat(Depth);
+			float D = Depth == ""? 0:strToFloat(Depth);
 			string[] str;
 			
 			code.Add("G17 G21 G40 G54 G80 G90");
@@ -68,11 +69,14 @@ namespace Cnc
 			code.Add("F400");
 			
 			foreach(string line in Data) 
-			{
-				str = prepareLine(line, D);
-				foreach(string s in str) 
+			{   
+				if(line != "")
 				{
-					code.Add(s);
+					str = prepareLine(line, D);
+					foreach(string s in str) 
+					{
+						code.Add(s);
+					}
 				}
 			}
 
