@@ -136,6 +136,11 @@
                     BuildAction = "EmbeddedResource"
                 />
                 <File
+                    RelPath = "Holes.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
                     RelPath = "Turning.cs"
                     SubType = "Code"
                     BuildAction = "Compile"

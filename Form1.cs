@@ -47,8 +47,6 @@ namespace Cnc
 		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.Label label15;
 		private System.Windows.Forms.NumericUpDown vT1_H;
-		private System.Windows.Forms.NumericUpDown vT1_W;
-		private System.Windows.Forms.NumericUpDown vT1_L;
 		private System.Windows.Forms.RadioButton vT1_DirectL;
 		private System.Windows.Forms.RadioButton vT1_DirectW;
 		private System.Windows.Forms.CheckBox vT1_2;
@@ -83,6 +81,25 @@ namespace Cnc
 		private System.Windows.Forms.TextBox codeLog;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Button btRun;
+		private System.Windows.Forms.Button btReset;
+		private System.Windows.Forms.Button btX0;
+		private System.Windows.Forms.Button btY0;
+		private System.Windows.Forms.Button btZ0;
+		private System.Windows.Forms.Button btResetX;
+		private System.Windows.Forms.NumericUpDown vT11_W;
+		private System.Windows.Forms.NumericUpDown vT11_L;
+		private System.Windows.Forms.TabPage tabPage6;
+		private System.Windows.Forms.TextBox vT5_Data;
+		private System.Windows.Forms.Label label18;
+		private System.Windows.Forms.TextBox vT5_Depth;
+		private System.Windows.Forms.Label label19;
+		private System.Windows.Forms.Label label20;
+		private System.Windows.Forms.Label label21;
+		private System.Windows.Forms.Label label22;
+		private System.Windows.Forms.Label label23;
+		private System.Windows.Forms.Label label24;
+		private System.Windows.Forms.Label label25;
+		private System.Windows.Forms.Label label26;
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -137,6 +154,7 @@ namespace Cnc
 			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(Form1));
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.btResetX = new System.Windows.Forms.Button();
 			this.label17 = new System.Windows.Forms.Label();
 			this.vT1_S = new System.Windows.Forms.NumericUpDown();
 			this.vT1_Podrez = new System.Windows.Forms.NumericUpDown();
@@ -144,8 +162,8 @@ namespace Cnc
 			this.imCutType2 = new System.Windows.Forms.PictureBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.vT1_H = new System.Windows.Forms.NumericUpDown();
-			this.vT1_W = new System.Windows.Forms.NumericUpDown();
-			this.vT1_L = new System.Windows.Forms.NumericUpDown();
+			this.vT11_W = new System.Windows.Forms.NumericUpDown();
+			this.vT11_L = new System.Windows.Forms.NumericUpDown();
 			this.vT1_DirectL = new System.Windows.Forms.RadioButton();
 			this.vT1_DirectW = new System.Windows.Forms.RadioButton();
 			this.vT1_2 = new System.Windows.Forms.CheckBox();
@@ -199,16 +217,32 @@ namespace Cnc
 			this.btRun = new System.Windows.Forms.Button();
 			this.codeLog = new System.Windows.Forms.TextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.btZ0 = new System.Windows.Forms.Button();
+			this.btY0 = new System.Windows.Forms.Button();
+			this.btX0 = new System.Windows.Forms.Button();
+			this.btReset = new System.Windows.Forms.Button();
 			this.btStop = new System.Windows.Forms.Button();
 			this.btStart = new System.Windows.Forms.Button();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+			this.tabPage6 = new System.Windows.Forms.TabPage();
+			this.vT5_Data = new System.Windows.Forms.TextBox();
+			this.label18 = new System.Windows.Forms.Label();
+			this.vT5_Depth = new System.Windows.Forms.TextBox();
+			this.label19 = new System.Windows.Forms.Label();
+			this.label20 = new System.Windows.Forms.Label();
+			this.label21 = new System.Windows.Forms.Label();
+			this.label22 = new System.Windows.Forms.Label();
+			this.label23 = new System.Windows.Forms.Label();
+			this.label24 = new System.Windows.Forms.Label();
+			this.label25 = new System.Windows.Forms.Label();
+			this.label26 = new System.Windows.Forms.Label();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.vT1_S)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.vT1_Podrez)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.vT1_H)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.vT1_W)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.vT1_L)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.vT11_W)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.vT11_L)).BeginInit();
 			this.tabPage2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.vT2_t2Depth)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.vT2_Depth)).BeginInit();
@@ -227,6 +261,7 @@ namespace Cnc
 			this.tabPage5.SuspendLayout();
 			this.panel2.SuspendLayout();
 			this.panel1.SuspendLayout();
+			this.tabPage6.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabControl1
@@ -235,16 +270,18 @@ namespace Cnc
 			this.tabControl1.Controls.Add(this.tabPage2);
 			this.tabControl1.Controls.Add(this.tabPage3);
 			this.tabControl1.Controls.Add(this.tabPage4);
+			this.tabControl1.Controls.Add(this.tabPage6);
 			this.tabControl1.Controls.Add(this.tabPage5);
 			this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tabControl1.Location = new System.Drawing.Point(0, 0);
+			this.tabControl1.Location = new System.Drawing.Point(5, 5);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(696, 470);
+			this.tabControl1.Size = new System.Drawing.Size(686, 460);
 			this.tabControl1.TabIndex = 0;
 			// 
 			// tabPage1
 			// 
+			this.tabPage1.Controls.Add(this.btResetX);
 			this.tabPage1.Controls.Add(this.label17);
 			this.tabPage1.Controls.Add(this.vT1_S);
 			this.tabPage1.Controls.Add(this.vT1_Podrez);
@@ -252,8 +289,8 @@ namespace Cnc
 			this.tabPage1.Controls.Add(this.imCutType2);
 			this.tabPage1.Controls.Add(this.pictureBox1);
 			this.tabPage1.Controls.Add(this.vT1_H);
-			this.tabPage1.Controls.Add(this.vT1_W);
-			this.tabPage1.Controls.Add(this.vT1_L);
+			this.tabPage1.Controls.Add(this.vT11_W);
+			this.tabPage1.Controls.Add(this.vT11_L);
 			this.tabPage1.Controls.Add(this.vT1_DirectL);
 			this.tabPage1.Controls.Add(this.vT1_DirectW);
 			this.tabPage1.Controls.Add(this.vT1_2);
@@ -262,9 +299,19 @@ namespace Cnc
 			this.tabPage1.Controls.Add(this.label1);
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.Size = new System.Drawing.Size(688, 444);
+			this.tabPage1.Size = new System.Drawing.Size(678, 434);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "Раскрой";
+			// 
+			// btResetX
+			// 
+			this.btResetX.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.btResetX.Location = new System.Drawing.Point(512, 280);
+			this.btResetX.Name = "btResetX";
+			this.btResetX.Size = new System.Drawing.Size(112, 48);
+			this.btResetX.TabIndex = 17;
+			this.btResetX.Text = "Reset X";
+			this.btResetX.Click += new System.EventHandler(this.btResetX_Click);
 			// 
 			// label17
 			// 
@@ -279,6 +326,11 @@ namespace Cnc
 			// 
 			this.vT1_S.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.vT1_S.Location = new System.Drawing.Point(64, 144);
+			this.vT1_S.Maximum = new System.Decimal(new int[] {
+																  1000,
+																  0,
+																  0,
+																  0});
 			this.vT1_S.Name = "vT1_S";
 			this.vT1_S.Size = new System.Drawing.Size(176, 29);
 			this.vT1_S.TabIndex = 15;
@@ -338,21 +390,31 @@ namespace Cnc
 																0,
 																0});
 			// 
-			// vT1_W
+			// vT11_W
 			// 
-			this.vT1_W.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.vT1_W.Location = new System.Drawing.Point(64, 64);
-			this.vT1_W.Name = "vT1_W";
-			this.vT1_W.Size = new System.Drawing.Size(176, 29);
-			this.vT1_W.TabIndex = 9;
+			this.vT11_W.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.vT11_W.Location = new System.Drawing.Point(64, 64);
+			this.vT11_W.Maximum = new System.Decimal(new int[] {
+																   1000,
+																   0,
+																   0,
+																   0});
+			this.vT11_W.Name = "vT11_W";
+			this.vT11_W.Size = new System.Drawing.Size(176, 29);
+			this.vT11_W.TabIndex = 9;
 			// 
-			// vT1_L
+			// vT11_L
 			// 
-			this.vT1_L.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.vT1_L.Location = new System.Drawing.Point(64, 24);
-			this.vT1_L.Name = "vT1_L";
-			this.vT1_L.Size = new System.Drawing.Size(176, 29);
-			this.vT1_L.TabIndex = 8;
+			this.vT11_L.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.vT11_L.Location = new System.Drawing.Point(64, 24);
+			this.vT11_L.Maximum = new System.Decimal(new int[] {
+																   1000,
+																   0,
+																   0,
+																   0});
+			this.vT11_L.Name = "vT11_L";
+			this.vT11_L.Size = new System.Drawing.Size(176, 29);
+			this.vT11_L.TabIndex = 8;
 			// 
 			// vT1_DirectL
 			// 
@@ -433,7 +495,7 @@ namespace Cnc
 			this.tabPage2.Controls.Add(this.pictureBox2);
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
-			this.tabPage2.Size = new System.Drawing.Size(688, 444);
+			this.tabPage2.Size = new System.Drawing.Size(678, 434);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Присадка торцевая";
 			// 
@@ -525,7 +587,7 @@ namespace Cnc
 			this.vT2_W.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.vT2_W.Location = new System.Drawing.Point(64, 24);
 			this.vT2_W.Maximum = new System.Decimal(new int[] {
-																  500,
+																  1000,
 																  0,
 																  0,
 																  0});
@@ -555,6 +617,11 @@ namespace Cnc
 			// 
 			this.vT2_X.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.vT2_X.Location = new System.Drawing.Point(64, 64);
+			this.vT2_X.Maximum = new System.Decimal(new int[] {
+																  1000,
+																  0,
+																  0,
+																  0});
 			this.vT2_X.Name = "vT2_X";
 			this.vT2_X.Size = new System.Drawing.Size(72, 29);
 			this.vT2_X.TabIndex = 12;
@@ -636,7 +703,7 @@ namespace Cnc
 			this.tabPage3.Controls.Add(this.pictureBox3);
 			this.tabPage3.Location = new System.Drawing.Point(4, 22);
 			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.Size = new System.Drawing.Size(688, 444);
+			this.tabPage3.Size = new System.Drawing.Size(678, 434);
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "Присадка фронтальная";
 			// 
@@ -726,6 +793,11 @@ namespace Cnc
 			// 
 			this.vT3_X.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.vT3_X.Location = new System.Drawing.Point(72, 152);
+			this.vT3_X.Maximum = new System.Decimal(new int[] {
+																  1000,
+																  0,
+																  0,
+																  0});
 			this.vT3_X.Name = "vT3_X";
 			this.vT3_X.Size = new System.Drawing.Size(72, 29);
 			this.vT3_X.TabIndex = 18;
@@ -744,7 +816,7 @@ namespace Cnc
 			this.vT3_W.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
 			this.vT3_W.Location = new System.Drawing.Point(72, 112);
 			this.vT3_W.Maximum = new System.Decimal(new int[] {
-																  500,
+																  1000,
 																  0,
 																  0,
 																  0});
@@ -805,7 +877,7 @@ namespace Cnc
 			this.tabPage4.Controls.Add(this.pictureBox4);
 			this.tabPage4.Location = new System.Drawing.Point(4, 22);
 			this.tabPage4.Name = "tabPage4";
-			this.tabPage4.Size = new System.Drawing.Size(688, 444);
+			this.tabPage4.Size = new System.Drawing.Size(678, 434);
 			this.tabPage4.TabIndex = 3;
 			this.tabPage4.Text = "Токарная обработка";
 			// 
@@ -895,7 +967,7 @@ namespace Cnc
 			this.tabPage5.Controls.Add(this.codeLog);
 			this.tabPage5.Location = new System.Drawing.Point(4, 22);
 			this.tabPage5.Name = "tabPage5";
-			this.tabPage5.Size = new System.Drawing.Size(688, 444);
+			this.tabPage5.Size = new System.Drawing.Size(678, 434);
 			this.tabPage5.TabIndex = 4;
 			this.tabPage5.Text = "Code";
 			// 
@@ -903,9 +975,9 @@ namespace Cnc
 			// 
 			this.panel2.Controls.Add(this.btRun);
 			this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panel2.Location = new System.Drawing.Point(0, 300);
+			this.panel2.Location = new System.Drawing.Point(0, 290);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(688, 144);
+			this.panel2.Size = new System.Drawing.Size(678, 144);
 			this.panel2.TabIndex = 1;
 			// 
 			// btRun
@@ -924,19 +996,61 @@ namespace Cnc
 			this.codeLog.Multiline = true;
 			this.codeLog.Name = "codeLog";
 			this.codeLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.codeLog.Size = new System.Drawing.Size(688, 444);
+			this.codeLog.Size = new System.Drawing.Size(678, 434);
 			this.codeLog.TabIndex = 0;
 			this.codeLog.Text = "";
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.btZ0);
+			this.panel1.Controls.Add(this.btY0);
+			this.panel1.Controls.Add(this.btX0);
+			this.panel1.Controls.Add(this.btReset);
 			this.panel1.Controls.Add(this.btStop);
 			this.panel1.Controls.Add(this.btStart);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panel1.Location = new System.Drawing.Point(0, 366);
+			this.panel1.Location = new System.Drawing.Point(5, 361);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(696, 104);
+			this.panel1.Size = new System.Drawing.Size(686, 104);
 			this.panel1.TabIndex = 5;
+			// 
+			// btZ0
+			// 
+			this.btZ0.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btZ0.Location = new System.Drawing.Point(470, 64);
+			this.btZ0.Name = "btZ0";
+			this.btZ0.TabIndex = 5;
+			this.btZ0.Text = "Z0";
+			this.btZ0.Click += new System.EventHandler(this.btZ0_Click);
+			// 
+			// btY0
+			// 
+			this.btY0.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btY0.Location = new System.Drawing.Point(470, 40);
+			this.btY0.Name = "btY0";
+			this.btY0.TabIndex = 4;
+			this.btY0.Text = "Y0";
+			this.btY0.Click += new System.EventHandler(this.btY0_Click);
+			// 
+			// btX0
+			// 
+			this.btX0.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btX0.Location = new System.Drawing.Point(470, 16);
+			this.btX0.Name = "btX0";
+			this.btX0.TabIndex = 3;
+			this.btX0.Text = "X0";
+			this.btX0.Click += new System.EventHandler(this.btX0_Click);
+			// 
+			// btReset
+			// 
+			this.btReset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.btReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.btReset.Location = new System.Drawing.Point(566, 16);
+			this.btReset.Name = "btReset";
+			this.btReset.Size = new System.Drawing.Size(104, 72);
+			this.btReset.TabIndex = 2;
+			this.btReset.Text = "RESET";
+			this.btReset.Click += new System.EventHandler(this.btReset_Click);
 			// 
 			// btStop
 			// 
@@ -962,22 +1076,147 @@ namespace Cnc
 			// 
 			this.openFileDialog1.Filter = "G-Code(*.ngc)|*.ngc|Text files(*.txt)|*.txt|All files(*.*)|*.*";
 			// 
+			// tabPage6
+			// 
+			this.tabPage6.Controls.Add(this.label26);
+			this.tabPage6.Controls.Add(this.label25);
+			this.tabPage6.Controls.Add(this.label24);
+			this.tabPage6.Controls.Add(this.label23);
+			this.tabPage6.Controls.Add(this.label22);
+			this.tabPage6.Controls.Add(this.label21);
+			this.tabPage6.Controls.Add(this.label20);
+			this.tabPage6.Controls.Add(this.label19);
+			this.tabPage6.Controls.Add(this.vT5_Depth);
+			this.tabPage6.Controls.Add(this.label18);
+			this.tabPage6.Controls.Add(this.vT5_Data);
+			this.tabPage6.Location = new System.Drawing.Point(4, 22);
+			this.tabPage6.Name = "tabPage6";
+			this.tabPage6.Size = new System.Drawing.Size(678, 434);
+			this.tabPage6.TabIndex = 5;
+			this.tabPage6.Text = "Сверление";
+			// 
+			// vT5_Data
+			// 
+			this.vT5_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.vT5_Data.Location = new System.Drawing.Point(8, 8);
+			this.vT5_Data.Multiline = true;
+			this.vT5_Data.Name = "vT5_Data";
+			this.vT5_Data.Size = new System.Drawing.Size(224, 248);
+			this.vT5_Data.TabIndex = 0;
+			this.vT5_Data.Text = "";
+			// 
+			// label18
+			// 
+			this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.label18.Location = new System.Drawing.Point(16, 272);
+			this.label18.Name = "label18";
+			this.label18.TabIndex = 1;
+			this.label18.Text = "Глубина";
+			// 
+			// vT5_Depth
+			// 
+			this.vT5_Depth.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.vT5_Depth.Location = new System.Drawing.Point(104, 272);
+			this.vT5_Depth.Name = "vT5_Depth";
+			this.vT5_Depth.Size = new System.Drawing.Size(128, 29);
+			this.vT5_Depth.TabIndex = 2;
+			this.vT5_Depth.Text = "";
+			// 
+			// label19
+			// 
+			this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.label19.Location = new System.Drawing.Point(240, 16);
+			this.label19.Name = "label19";
+			this.label19.Size = new System.Drawing.Size(152, 23);
+			this.label19.TabIndex = 3;
+			this.label19.Text = "Формат строки";
+			// 
+			// label20
+			// 
+			this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.label20.Location = new System.Drawing.Point(240, 48);
+			this.label20.Name = "label20";
+			this.label20.Size = new System.Drawing.Size(424, 48);
+			this.label20.TabIndex = 4;
+			this.label20.Text = "<X> <Y> [L<количество> I<сдвиг по X> J<сдвиг по Y> D<глубина>]";
+			// 
+			// label21
+			// 
+			this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.label21.Location = new System.Drawing.Point(240, 96);
+			this.label21.Name = "label21";
+			this.label21.Size = new System.Drawing.Size(152, 23);
+			this.label21.TabIndex = 5;
+			this.label21.Text = "Примеры";
+			// 
+			// label22
+			// 
+			this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.label22.Location = new System.Drawing.Point(240, 128);
+			this.label22.Name = "label22";
+			this.label22.Size = new System.Drawing.Size(424, 24);
+			this.label22.TabIndex = 6;
+			this.label22.Text = "Два отверстия общей глубины";
+			
+			// 
+			// label23
+			// 
+			this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.label23.Location = new System.Drawing.Point(248, 160);
+			this.label23.Name = "label23";
+			this.label23.Size = new System.Drawing.Size(80, 48);
+			this.label23.TabIndex = 7;
+			this.label23.Text = "200 10   300 10";
+			// 
+			// label24
+			// 
+			this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.label24.Location = new System.Drawing.Point(240, 208);
+			this.label24.Name = "label24";
+			this.label24.Size = new System.Drawing.Size(424, 56);
+			this.label24.TabIndex = 8;
+			this.label24.Text = "Одно отверстие Х200 и У10 общей глубины и 5 отверстий  вдоль оси Y глубиной 15 и " +
+				"расстоянием между ними 30";
+			// 
+			// label25
+			// 
+			this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.label25.Location = new System.Drawing.Point(256, 272);
+			this.label25.Name = "label25";
+			this.label25.Size = new System.Drawing.Size(80, 16);
+			this.label25.TabIndex = 9;
+			this.label25.Text = "200 10 ";
+			// 
+			// label26
+			// 
+			this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+			this.label26.Location = new System.Drawing.Point(256, 296);
+			this.label26.Name = "label26";
+			this.label26.Size = new System.Drawing.Size(384, 16);
+			this.label26.TabIndex = 10;
+			this.label26.Text = "300 10 L5 J30 D15 ";
+			// 
 			// Form1
 			// 
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
 			this.ClientSize = new System.Drawing.Size(696, 470);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.tabControl1);
+			this.DockPadding.All = 5;
+			this.KeyPreview = true;
+			this.MaximizeBox = false;
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "CNC";
 			this.TopMost = true;
+			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.vT1_S)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.vT1_Podrez)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.vT1_H)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.vT1_W)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.vT1_L)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.vT11_W)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.vT11_L)).EndInit();
 			this.tabPage2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.vT2_t2Depth)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.vT2_Depth)).EndInit();
@@ -996,6 +1235,7 @@ namespace Cnc
 			this.tabPage5.ResumeLayout(false);
 			this.panel2.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
+			this.tabPage6.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -1011,6 +1251,7 @@ namespace Cnc
 
 		private void RunCode(string[] code) 
 		{
+			_mInst.DoOEMButton(169);
 			using (StreamWriter outputFile = new StreamWriter("C:\\tmp\\gcode.txt"))
 			{
 				codeLog.Clear();
@@ -1019,7 +1260,7 @@ namespace Cnc
 					codeLog.AppendText(line + "\r\n");
 					outputFile.WriteLine(line);
 				}
-			}
+			}			
 			_mInst.LoadFile("C:\\tmp\\gcode.txt");
 			System.Threading.Thread.Sleep(2000); // pause for the file loading
 			_mInst.DoOEMButton(1000);
@@ -1041,10 +1282,11 @@ namespace Cnc
 		}
 		
 		private void DoCutting() 
-		{	            
+		{	      
+      
 			RunCode(Cutting.getGCode(
-				vT1_L.Value, 
-				vT1_W.Value, 
+				vT11_L.Value, 
+				vT11_W.Value, 
 				vT1_H.Value, 
 				vT1_2.Checked, 
 				vT1_DirectW.Checked, 
@@ -1091,6 +1333,15 @@ namespace Cnc
 			));
 		}
 
+		private void DoHoles()
+		{
+			
+			RunCode(Holes.getGCode(
+				vT5_Data.Lines,
+				vT5_Depth.Text
+			));
+		}
+
 		private void DoTurning()
 		{
 			if(vT4_FileName.Text == "")
@@ -1110,30 +1361,48 @@ namespace Cnc
 			));			
 		}
 
-
-		private void btStop_Click(object sender, System.EventArgs e)
+		private void ClickButton(short code)
 		{
 			GetMachInstance();
 			if(_mInst != null) 
 			{
-				_mInst.DoOEMButton(1003);
+				_mInst.DoOEMButton(code);
 			}
 		}
 
-		private void btStart_Click_1(object sender, System.EventArgs e)
+		private void btStop_Click(object sender, System.EventArgs e)
+		{
+			StopWork();
+			btStart.Focus();
+		}
+
+		private void StopWork()
+		{
+			ClickButton(1003);		
+		}
+
+		private void StartWork()
 		{
 			GetMachInstance();
 			if(_mInst != null) 
 			{
-				Console.WriteLine(tabControl1.SelectedIndex);
+				//Console.WriteLine(tabControl1.SelectedIndex);
 				switch(tabControl1.SelectedIndex) 
 				{
 					case 0: DoCutting();break;
-                    case 1: DoAdditiveButt();break;
-                    case 2: DoAdditiveFront();break; 
+					case 1: DoAdditiveButt();break;
+					case 2: DoAdditiveFront();break; 
 					case 3: DoTurning();break;
+					case 4: DoHoles();break;
 				}				
 			}
+		}
+
+
+
+		private void btStart_Click_1(object sender, System.EventArgs e)
+		{
+			StartWork();
 		}
 
 
@@ -1154,11 +1423,61 @@ namespace Cnc
 				return;
 
 			vT4_FileName.Text = openFileDialog1.FileName;
+			btStart.Focus();
 		}
 
 		private void btRun_Click(object sender, System.EventArgs e)
 		{
 			RunTestCode(codeLog.Lines);
-		}		
+		}
+
+		private void btX0_Click(object sender, System.EventArgs e)
+		{
+			ClickButton(1008);
+			btStart.Focus();
+		}
+
+		private void btY0_Click(object sender, System.EventArgs e)
+		{
+			ClickButton(1009);
+			btStart.Focus();
+		}
+
+		private void btZ0_Click(object sender, System.EventArgs e)
+		{
+			ClickButton(1010);
+			btStart.Focus();
+		}
+
+		private void Form1_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+		{
+			if(e.KeyCode == Keys.Enter)
+				StartWork();
+			else
+			if(e.KeyCode == Keys.Escape)
+				StopWork();
+			
+		}
+
+		private void btReset_Click(object sender, System.EventArgs e)
+		{
+			ClickButton(1021);	
+			btStart.Focus();
+		}
+
+		private void btResetX_Click(object sender, System.EventArgs e)
+		{
+			GetMachInstance();
+			if(_mInst != null) 
+			{
+				//RunCode(new string[] {;
+				_mInst.Code("G92 X0 Y0 Z0");
+				System.Threading.Thread.Sleep(1000);
+				_mInst.Code("G00 X-986");
+				_mInst.Code("G92 X0 Y0 Z0");
+			}
+		}
+
+		
 	}
 }
